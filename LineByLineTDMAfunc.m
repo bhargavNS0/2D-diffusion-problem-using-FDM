@@ -1,4 +1,4 @@
-function [T,x] = LineByLineTDMAfunc(a,b,c,d,n)
+function [theta,x] = LineByLineTDMAfunc(a,b,c,d,n)
 % for dx = dy
 % the coefficient matrix d and e,h,D matrices depends on the problem definition 
 D = d;
@@ -44,9 +44,3 @@ for q = n:-1:1
         x = x+1;                                       % to get total number of iterations completed
     end
 end
-
-theta = theta+25;                                      % surrounding temperature is 25 celsius
-theta = transpose(theta);
-theta = reshape(theta,n,n+1);
-T = ones(n+1)*25;
-T(1:n,:) = theta;
